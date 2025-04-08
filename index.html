@@ -1,119 +1,132 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Indica el tipo de documento HTML5 -->
+<html lang="es"> <!-- Lenguaje principal del documento: español -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Re-Read</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
-<link rel="icon" href="./img/icono.png" type="image/png">
+  <meta charset="UTF-8"> <!-- Codificación de caracteres en UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para que se vea bien en dispositivos móviles -->
+  <title>Re-Read</title> <!-- Título que aparece en la pestaña del navegador -->
+  
+  <link rel="stylesheet" href="style.css"> <!-- Vincula la hoja de estilos externa -->
+
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Icono que aparece en la pestaña del navegador -->
+  <link rel="icon" href="./img/icono.png" type="image/png">
 </head>
+
 <body>
+  <header>
+    <div class="logo">Re-Read</div> <!-- Logo del sitio -->
+  </header>
 
-<header>
-  <div class="logo">Re-Read</div>
-</header>
+  <main>
+    <h1>Re–Read</h1> <!-- Título principal de la página -->
 
-<main>
-  <h1>Re-Read</h1>
-  <p class="intro">
-    En Re-Read podrás encontrar libros de segunda mano en perfecto estado. También vender los tuyos.
-    Porque siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te
-    quedes sin ninguno de los dos.
-  </p>
+    <p class="intro">
+      <!-- Introducción de la tienda Re-Read -->
+      En Re-Read podrás encontrar libros de segunda mano en perfecto estado. También vender los tuyos.
+      Porque siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes sin ninguno de los dos.
+    </p>
 
-  <!-- Menú -->
-  <nav class="menu">
-    <button class="tab-button active" onclick="showTab('tab-reread')">Re-Read</button>
-    <button class="tab-button" onclick="showTab('tab-libros')">Libros</button>
-    <button class="tab-button" onclick="showTab('tab-ebooks')">eBooks</button>
-  </nav>
+    <!-- Menú de pestañas -->
+    <nav class="tabs">
+      <button class="tab-button active" onclick="mostrarSeccion('reread')">Re-Read</button>
+      <button class="tab-button" onclick="mostrarSeccion('libros')">Libros</button>
+      <button class="tab-button" onclick="mostrarSeccion('ebooks')">eBooks</button>
+    </nav>
 
-  <div class="content">
-    <div class="left">
-      <!-- Sección Re-Read -->
-      <section id="tab-reread" class="tab-content">
-        <h2>Nunca la lectura ha sido tan necesaria</h2>
-        <p>
-          En esto tiempos difíciles Re-Read se suma al mensaje de <strong>#yomequedoencasa</strong>
-          por el bien común de la sociedad.
-        </p>
-        <h3>Reduce & Reuse & Read</h3>
-        <p>
-          Somos la librería Eco-Friendly — Re-Read nació pensando en verde con el objetivo de compartir 
-          una pasión, la lectura y para expresar una preocupación: si queremos construir un futuro sostenible, 
-          es necesario que reduzcamos el consumo y que reutilicemos cuantos más objetos materiales mejor.
-        </p>
-      </section>
+    <!-- Sección Re-Read (visible por defecto) -->
+    <section id="reread" class="seccion activa">
+      <p class="info">
+        En Re-Read podrás encontrar libros de segunda mano en perfecto estado. También vender los tuyos. 
+        Porque siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te 
+        quedes sin ninguno de los dos.
+      </p>
+    </section>
 
-      <!-- Sección Libros -->
-      <section id="tab-libros" class="tab-content hidden">
-        <h2>Todos los libros tienen el mismo precio</h2>
-        <p>Libros casi nuevos a un precio casi imposible.</p>
-        <div class="precios-libros">
-          <img src="./img/1-libro-3€.gif" alt="1 libro 3€">
-          <img src="./img/2-libros-5€.gif" alt="2 libros 5€">
-          <img src="./img/5-libros-10€.gif" alt="5 libros 10€">
-        </div>
-        <h3>¿Te cambias de piso? ¿Tienes que vaciar la casa? ¿O sencillamente necesitas algo más de espacio?</h3>
-        <p>
-          En Re-Read compramos tus libros para darles una segunda vida. Los compramos todos al mismo precio: 0,20 euros.
-          Siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes
-          sin ninguno de los dos.
-        </p>
-      </section>
+    <!-- Sección Libros -->
+    <section id="libros" class="seccion">
+      <h2>Todos los libros tienen el mismo precio</h2>
+      <p>Libros casi nuevos a un precio casi imposible.</p>
 
-        <!-- Sección eBooks -->
-        <section id="tab-ebooks" class="tab-content hidden">
-            <h2>Toda la actualidad en eBook</h2>
-            <div class="ebooks-grid">
-            <div class="ebook">
-                <img src="./img/cell.jpeg" alt="Cell - Stephen King">
-        <p>
-          A través de los teléfonos móviles se envía una señal que convierte a los humanos en asesinos...
-        </p>
-            </div>
-            <div class="ebook">
-                <img src="./img/elciclodelhombrelobo.jpeg" alt="El ciclo del hombre lobo - Stephen King">
-        <p>
-          Una escalofriante realidad del ciclo lunar como eje. El rey de la literatura de terror...
-        </p>
+      <!-- Imágenes con los precios -->
+      <div class="precios">
+        <img src="./img/1-libro-3€.gif" alt="1 libro 3€">
+        <img src="./img/2-libros-5€.gif" alt="2 libros 5€">
+        <img src="./img/5-libros-10€.gif" alt="5 libros 10€">
       </div>
-      <div class="ebook">
-        <img src="./img/elresplandor.jpeg" alt="El Resplandor - Stephen King">
-        <p>
-          Esa es la palabra que Danny había visto en el espejo. Lo supiera o no, sabía que era un mensaje de horror...
-        </p>
+
+      <!-- Pregunta para llamar la atención -->
+      <p class="pregunta"><strong>¿Te cambias de piso? ¿Tienes que vaciar la casa? ¿O simplemente necesitas algo más de espacio?</strong></p>
+
+      <!-- Explicación de compra de libros -->
+      <p>
+        En Re-Read compramos tus libros para darles una segunda vida. Los compramos todos al mismo precio: 0,20 euros. 
+        Siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes sin ninguno de los dos.
+      </p>
+    </section>
+
+    <!-- Sección eBooks -->
+    <section id="ebooks" class="seccion">
+      <h2>Toda la actualidad en eBook</h2>
+
+      <!-- Galería de eBooks -->
+      <div class="ebooks">
+        <figure>
+          <img src="./img/cell.jpeg" alt="Cell">
+          <figcaption>A través de los teléfonos móviles se desata una epidemia de proporciones monstruosas...</figcaption>
+        </figure>
+        <figure>
+          <img src="./img/elciclodelhombrelobo.jpeg" alt="El ciclo del hombre lobo">
+          <figcaption>Una escalofriante revisión del mito de la licantropía por el rey de la literatura de terror...</figcaption>
+        </figure>
+        <figure>
+          <img src="./img/elresplandor.jpeg" alt="El resplandor">
+          <figcaption>En el siniestro hotel Overlook, el pequeño Danny empieza a tener visiones de horror...</figcaption>
+        </figure>
+        <figure>
+          <img src="./img/doctorsleep.jpeg" alt="Doctor Sueño">
+          <figcaption>Una novela que actualiza el mito y conecta con El resplandor en un giro asombroso...</figcaption>
+        </figure>
+        <figure>
+          <img src="./img/mientrasescribo.jpeg" alt="Mientras escribo">
+          <figcaption>Pocas veces un libro sobre el oficio de escribir ha resultado tan útil y revelador...</figcaption>
+        </figure>
       </div>
-      <div class="ebook">
-        <img src="./img/doctorsleep.jpeg" alt="Doctor Sueño - Stephen King">
-        <p>
-          Una novela que continúa El Resplandor y que encantará a generaciones de fans...
-        </p>
-      </div>
-      <div class="ebook">
-        <img src="./img/mientrasescribo.jpeg" alt="Mientras escribo - Stephen King">
-        <p>
-          Pocas veces un libro sobre el oficio de escribir ha resultado tan claro, útil y revelador como este...
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Barra lateral con el Top ventas -->
+    <aside class="ventas">
+      <h3>Top ventas</h3>
+      <ul>
+        <li>Cien años de soledad.</li>
+        <li>Crónica de una muerte anunciada.</li>
+        <li>El otoño del patriarca.</li>
+        <li>El general en su laberinto.</li>
+      </ul>
     </aside>
-  </div>
-</main>
+  </main>
 
-<script>
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(section => section.classList.add('hidden'));
-    document.getElementById(tabId).classList.remove('hidden');
+  <!-- Script para cambiar entre pestañas -->
+  <script>
+    function mostrarSeccion(id) {
+      // Oculta todas las secciones
+      document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activa'));
 
-    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-  }
-</script>
+      // Desactiva todos los botones
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
 
+      // Muestra la sección seleccionada
+      document.getElementById(id).classList.add('activa');
+
+      // Activa el botón que ha sido pulsado
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
+
+
+

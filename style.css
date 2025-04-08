@@ -1,138 +1,180 @@
+/* Estilos generales para todo el cuerpo de la página */
 body {
-    font-family: "Courier Prime", monospace;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #000;
+  font-family: monospace; /* Fuente de texto tipo monoespaciada */
+  margin: 0;               /* Elimina el margen por defecto */
+  padding: 0;              /* Elimina el relleno por defecto */
 }
 
+/* Estilo del encabezado */
 header {
-    background-color: #004d3c;
-    padding: 1rem;
+  background-color: #005f4b; /* Fondo verde oscuro */
+  color: white;              /* Texto en blanco */
+  padding: 10px;             /* Espaciado interno */
 }
 
+/* Estilo del logo dentro del header */
 .logo {
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
+  font-weight: bold; /* Texto en negrita */
 }
 
+/* Estilo principal del contenido */
 main {
-    padding: 2rem;
-    text-align: center;
+  padding: 20px;        /* Espacio alrededor del contenido */
+  position: relative;   /* Para posicionar el sidebar con absolute */
 }
 
+/* Título principal (Re-Read) */
 h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+  text-align: center;   /* Centrado horizontal */
+  font-size: 3em;       /* Tamaño grande del texto */
 }
 
+/* Párrafo de introducción */
 .intro {
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
+  text-align: center;     /* Centrado horizontal */
+  max-width: 700px;       /* Máximo ancho del texto */
+  margin: 0 auto 30px;    /* Centrado y separación inferior */
 }
 
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+/* Contenedor de pestañas (Re-Read, Libros, eBooks) */
+.tabs {
+  display: flex;                /* Distribuye elementos en fila */
+  gap: 10px;                    /* Espacio entre botones */
+  border-bottom: 2px solid #cc4400; /* Línea decorativa inferior */
+  margin-bottom: 20px;          /* Separación con el contenido */
+  flex-wrap: wrap;              /* Permite que salten de línea en pantallas pequeñas */
 }
 
-.menu button {
-    background-color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-bottom: 3px solid transparent;
-    font-size: 1rem;
-    cursor: pointer;
+/* Botones de pestañas */
+.tab-button {
+  background: none;            /* Fondo transparente */
+  border: none;                /* Sin borde */
+  padding: 10px 20px;          /* Espaciado interno */
+  font-family: monospace;      /* Fuente monoespaciada */
+  cursor: pointer;             /* Cursor de mano al pasar por encima */
 }
 
-.menu .active {
-    border-bottom: 3px solid #d64800;
-}
-
-.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.left {
-    flex: 2;
-}
-
-.right {
-    flex: 1;
-    padding-top: 1rem;
-}
-
-.right h4 {
-    font-weight: bold;
-}
-
-.right ul {
-    list-style: none;
-    padding: 0;
-}
-
-.right li {
-    background-color: #0c685c;
-    color: white;
-    margin-bottom: 0.5rem;
-    padding: 0.8rem;
-    border-radius: 4px;
-}
-
-.tab-content.hidden {
-    display: none;
-}
-
+/* Estilo cuando una pestaña está activa */
 .tab-button.active {
-    border-bottom: 3px solid #d64800;
-    background-color: #f8f8f8;
+  background-color: #cc4400; /* Fondo naranja oscuro */
+  color: white;              /* Texto blanco */
+  font-weight: bold;         /* Negrita */
 }
 
-.precios-libros {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
+/* Oculta las secciones por defecto */
+.seccion {
+  display: none;
 }
 
-.precios-libros img {
-    max-width: 120px;
-    height: auto;
+/* Muestra solo la sección activa */
+.seccion.activa {
+  display: block;
 }
-.ebooks-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: flex-start;
-    margin-top: 2rem;
+
+/* Imágenes de precios (libros) */
+.precios img {
+  width: 120px;         /* Ancho fijo */
+  margin-right: 15px;   /* Separación a la derecha */
+}
+
+/* Pregunta destacada en la sección de libros */
+.pregunta {
+  margin-top: 30px;     /* Separación superior */
+  font-weight: bold;    /* Texto en negrita */
+}
+
+/* Galería de eBooks */
+.ebooks {
+  display: flex;        /* Elementos en fila */
+  flex-wrap: wrap;      /* Permite saltar de línea */
+  gap: 20px;            /* Espacio entre libros */
+}
+
+/* Cada figura de eBook */
+.ebooks figure {
+  width: 150px;         /* Ancho fijo */
+  text-align: center;   /* Centrado del texto */
+}
+
+/* Imagen del eBook */
+.ebooks img {
+  width: 100%;          /* Ocupa todo el ancho de su contenedor */
+}
+
+/* Barra lateral de Top ventas */
+.ventas {
+  position: absolute;   /* Posicionamiento flotante */
+  top: 200px;           /* Distancia desde la parte superior del main */
+  right: 20px;          /* Separación del borde derecho */
+  width: 200px;         /* Ancho fijo */
+}
+
+/* Título del Top ventas */
+.ventas h3 {
+  font-size: 1em;        /* Tamaño del texto */
+  margin-bottom: 10px;   /* Separación inferior */
+}
+
+/* Lista sin viñetas */
+.ventas ul {
+  list-style: none;      /* Elimina los puntos de la lista */
+  padding: 0;            /* Sin relleno interno */
+}
+
+/* Elementos individuales del Top ventas */
+.ventas li {
+  background-color: #007a63; /* Fondo verde */
+  color: white;              /* Texto blanco */
+  padding: 10px;             /* Espaciado interno */
+  margin-bottom: 5px;        /* Separación entre elementos */
+}
+
+/* 🔻 MEDIA QUERY para pantallas pequeñas 🔻 */
+@media (max-width: 768px) {
+  /* Título más pequeño en móviles */
+  h1 {
+    font-size: 2em;
   }
-  
-  .ebook {
-    width: 180px; /* Ajusta según el tamaño de las imágenes */
-    text-align: center;
+
+  /* Las pestañas se colocan en columna */
+  .tabs {
+    flex-direction: column;
+    gap: 5px; /* Menor espacio entre botones */
   }
-  
-  .ebook img {
+
+  /* Las imágenes de precios se centran y reducen tamaño */
+  .precios img {
+    display: block;
+    margin: 10px auto;
+    width: 60%;
+  }
+
+  /* eBooks en columna centrada */
+  .ebooks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Cada libro ocupa el 80% del ancho */
+  .ebooks figure {
+    width: 80%;
+  }
+
+  /* El sidebar se coloca debajo del contenido */
+  .ventas {
+    position: static;
     width: 100%;
-    height: auto;
-    max-height: 250px;
-    object-fit: contain;
-    border-radius: 8px;
+    margin-top: 40px;
   }
-  
-  .ebook p {
-    font-family: monospace;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
+
+  /* Ajustes de texto del sidebar en móviles */
+  .ventas li {
+    font-size: 0.9em;
   }
-  
+
+  /* Ajustes para introducción y pregunta en móvil */
+  .intro, .pregunta {
+    text-align: left;
+    padding: 0 10px;
+  }
+}
