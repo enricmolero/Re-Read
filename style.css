@@ -1,4 +1,138 @@
-.re-read {
-    background-color: rgb(39, 57, 28);
-    color: white;
+body {
+    font-family: "Courier Prime", monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
 }
+
+header {
+    background-color: #004d3c;
+    padding: 1rem;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.intro {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.menu button {
+    background-color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.menu .active {
+    border-bottom: 3px solid #d64800;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.left {
+    flex: 2;
+}
+
+.right {
+    flex: 1;
+    padding-top: 1rem;
+}
+
+.right h4 {
+    font-weight: bold;
+}
+
+.right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.right li {
+    background-color: #0c685c;
+    color: white;
+    margin-bottom: 0.5rem;
+    padding: 0.8rem;
+    border-radius: 4px;
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+.tab-button.active {
+    border-bottom: 3px solid #d64800;
+    background-color: #f8f8f8;
+}
+
+.precios-libros {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.precios-libros img {
+    max-width: 120px;
+    height: auto;
+}
+.ebooks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+  
+  .ebook {
+    width: 180px; /* Ajusta según el tamaño de las imágenes */
+    text-align: center;
+  }
+  
+  .ebook img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .ebook p {
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  

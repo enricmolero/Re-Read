@@ -1,20 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Re-Read</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Re-Read</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <div class="re-read">
-            <p>Re-Read</p>
+
+<header>
+  <div class="logo">Re-Read</div>
+</header>
+
+<main>
+  <h1>Re-Read</h1>
+  <p class="intro">
+    En Re-Read podrás encontrar libros de segunda mano en perfecto estado. También vender los tuyos.
+    Porque siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te
+    quedes sin ninguno de los dos.
+  </p>
+
+  <!-- Menú -->
+  <nav class="menu">
+    <button class="tab-button active" onclick="showTab('tab-reread')">Re-Read</button>
+    <button class="tab-button" onclick="showTab('tab-libros')">Libros</button>
+    <button class="tab-button" onclick="showTab('tab-ebooks')">eBooks</button>
+  </nav>
+
+  <div class="content">
+    <div class="left">
+      <!-- Sección Re-Read -->
+      <section id="tab-reread" class="tab-content">
+        <h2>Nunca la lectura ha sido tan necesaria</h2>
+        <p>
+          En esto tiempos difíciles Re-Read se suma al mensaje de <strong>#yomequedoencasa</strong>
+          por el bien común de la sociedad.
+        </p>
+        <h3>Reduce & Reuse & Read</h3>
+        <p>
+          Somos la librería Eco-Friendly — Re-Read nació pensando en verde con el objetivo de compartir 
+          una pasión, la lectura y para expresar una preocupación: si queremos construir un futuro sostenible, 
+          es necesario que reduzcamos el consumo y que reutilicemos cuantos más objetos materiales mejor.
+        </p>
+      </section>
+
+      <!-- Sección Libros -->
+      <section id="tab-libros" class="tab-content hidden">
+        <h2>Todos los libros tienen el mismo precio</h2>
+        <p>Libros casi nuevos a un precio casi imposible.</p>
+        <div class="precios-libros">
+          <img src="./img/1-libro-3€.gif" alt="1 libro 3€">
+          <img src="./img/2-libros-5€.gif" alt="2 libros 5€">
+          <img src="./img/5-libros-10€.gif" alt="5 libros 10€">
         </div>
-            <h1>Re-Read</h1>
+        <h3>¿Te cambias de piso? ¿Tienes que vaciar la casa? ¿O sencillamente necesitas algo más de espacio?</h3>
+        <p>
+          En Re-Read compramos tus libros para darles una segunda vida. Los compramos todos al mismo precio: 0,20 euros.
+          Siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes
+          sin ninguno de los dos.
+        </p>
+      </section>
+
+        <!-- Sección eBooks -->
+        <section id="tab-ebooks" class="tab-content hidden">
+            <h2>Toda la actualidad en eBook</h2>
+            <div class="ebooks-grid">
+            <div class="ebook">
+                <img src="./img/cell.jpeg" alt="Cell - Stephen King">
+        <p>
+          A través de los teléfonos móviles se envía una señal que convierte a los humanos en asesinos...
+        </p>
+            </div>
+            <div class="ebook">
+                <img src="./img/elciclodelhombrelobo.jpeg" alt="El ciclo del hombre lobo - Stephen King">
+        <p>
+          Una escalofriante realidad del ciclo lunar como eje. El rey de la literatura de terror...
+        </p>
+      </div>
+      <div class="ebook">
+        <img src="./img/elresplandor.jpeg" alt="El Resplandor - Stephen King">
+        <p>
+          Esa es la palabra que Danny había visto en el espejo. Lo supiera o no, sabía que era un mensaje de horror...
+        </p>
+      </div>
+      <div class="ebook">
+        <img src="./img/doctorsleep.jpeg" alt="Doctor Sueño - Stephen King">
+        <p>
+          Una novela que continúa El Resplandor y que encantará a generaciones de fans...
+        </p>
+      </div>
+      <div class="ebook">
+        <img src="./img/mientrasescribo.jpeg" alt="Mientras escribo - Stephen King">
+        <p>
+          Pocas veces un libro sobre el oficio de escribir ha resultado tan claro, útil y revelador como este...
+        </p>
+      </div>
     </div>
+  </section>
+      </ul>
+    </aside>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(section => section.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+
 </body>
 </html>
